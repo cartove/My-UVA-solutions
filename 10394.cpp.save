@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+#define MAX 300000000
+
+int* MarkingArrayIsPrime;
+
+void generatePrimesUptoMAX(const int &upperBound) {
+    for (int i = 2; i * i <= upperBound; i++)
+        if (!MarkingArrayIsPrime[i])
+            for (int j = i * i; j <= upperBound; j +=i)
+                MarkingArrayIsPrime[j] = true;
+}
+
+int main() {
+    MarkingArrayIsPrime = (int*) malloc((MAX)*sizeof(int));
+    generatePrimesUptoMAX(MAX);
+    int n,m,count;
+    scanf("%d%d",&n,&m);
+    for(int i = 1, i<=n; ++i)
+        for(int j=0; k<=m; ++j) {
+            if(!MarkingArrayIsPrime[j] && !MarkingArrayIsPrime[i] ) {
+            if()
+                count++;
+            }
+        }
+    printf("%d",count);
+    return 0;
+}
